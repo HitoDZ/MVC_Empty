@@ -1,0 +1,24 @@
+﻿@model IQueryable<MVC_Empty.Models.Users>
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+
+@{
+    foreach (MVC_Empty.Models.Users x in ViewBag.Item)
+    {
+        if (x.Password == null)
+        {
+            <li style="background-color: cadetblue">@Html.ActionLink("Redact Pass" + x.Login, "Edit", new {login = x.Login})</li>
+
+        }
+        else
+        {
+            <li>@Html.ActionLink("Redact Pass" + x.Login, "Edit", new { login = x.Login })</li>
+        }
+
+
+    }
+}

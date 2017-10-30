@@ -1,0 +1,12 @@
+﻿@model IQueryable<MVC_Empty.Models.Users>
+@{
+    ViewBag.Title = "MainWindow_cw";
+}
+
+<h2>ViewBag.User</h2>
+@{
+    if (ViewBag.User != null)
+    {
+        <li>@Html.ActionLink("Redact Pass", "Edit", new { login = ViewBag.User })</li>
+    }
+}
